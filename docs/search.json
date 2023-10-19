@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\nWelcome to my webpage!!\n",
+    "section": "",
+    "text": "Welcome to my webpage!!\n\n\nHi everyone! I am Niki :)\nI enjoy drawing, travelling, and eating good food. I took up this mod to kick start coding!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "testing.html",
+    "href": "testing.html",
+    "title": "My weekly submissions",
+    "section": "",
+    "text": "Week\nLink\n\n\n\n\n\n\n1\nWeek 1\n\n\n\n\n2\nWeek 2\n\n\n\n\n3\nWeek 3\n\n\n\n\n4\nWeek 4\n\n\n\n\n5\nWeek 5\n\n\n\n\n6\nWeek 6\n\n\n\n\n7\nWeek 7\n\n\n\n\n8\nWeek 8\n\n\n\n\n9\nWeek 9"
+  }
+]

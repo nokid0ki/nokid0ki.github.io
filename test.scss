@@ -1,0 +1,75 @@
+/*-- scss:defaults --*/
+// Base document colors
+$body-bg: #d7d3eb;
+$body-color: #2b2d30;
+$link-color: white;
+$fontcolor: grey;
+
+// Code blocks
+$code-block-bg-alpha: -.8;
+
+// Navbar
+$navbar-bg: #b6b2cf;
+$nav-link-color: white;
+$nav-link-hover-color:  white;
+$nav-link-disabled-color: white;
+
+
+
+// Fonts
+
+// stylelint-disable-next-line value-keyword-case
+$font-family-sans-serif:      Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+$headings-color: #454352;
+
+.test h3 {
+  text-align: center;
+}
+
+
+
+
+//
+// Color system
+//
+
+$white:    #fff !default;
+$gray-100: #f0f5fa !default;
+$gray-200: #d9e3f1 !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #bed1e6 !default;
+$gray-500: #adb5bd !default;
+$gray-600: #7f8a99 !default;
+$gray-700: #7b8ab8 !default;
+$gray-800: #444b40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #378dfc !default;
+$indigo:  #6610f2 !default;
+$purple:  #5b62f4 !default;
+$pink:    #d63384 !default;
+$red:     #e52527 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #43cc29 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+$primary:       $blue !default;
+$secondary:     #f0edf7;
+$success:       $green !default;
+$info:          $purple !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+
+// Buttons + Forms
+
+$input-btn-padding-y:         0.5rem !default;
+$input-btn-padding-x:         0.5rem !default;
+
+
+

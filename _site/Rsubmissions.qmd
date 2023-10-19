@@ -1,0 +1,22 @@
+---
+title: My weekly submissions
+subtitle: Or click on the GitHub icon on the right of the navigation to go to my page directly!
+date: today
+toc: true
+theme:
+  - cosmo
+  - test.scss
+  
+---
+
+| Week  | Link
+|:------|-----|---------|:------:|
+|   1  |  [Week 1](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%201%20submissions){.btn .btn-outline-secondary .btn role="button" }  |  
+|  2  |  [Week 2](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%202%20submissions){.btn .btn-outline-secondary .btn role="button" } |   
+|    3  | [Week 3](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%203%20submissions){.btn .btn-outline-secondary .btn role="button" }|
+|    4  |    [Week 4](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%204%20submissions){.btn .btn-outline-secondary .btn role="button" } |
+|    5  |    [Week 5](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%205%20submissions){.btn .btn-outline-secondary .btn role="button" } |
+|    6  |    [Week 6](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%206%20submissions){.btn .btn-outline-secondary .btn role="button" } |
+|    7  |    [Week 7](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%207%20submissions){.btn .btn-outline-secondary .btn role="button" } |
+|    8  |    [Week 8](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%208%20submissions){.btn .btn-outline-secondary .btn role="button" } |
+|    9  |    [Week 9](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%209%20submissions){.btn .btn-outline-secondary .btn role="button" } |
