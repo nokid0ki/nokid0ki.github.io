@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 website:
-  favicon: logo.png
   title: "Niki's NM2207"
+  favicon: "hehe.png"
   navbar:
     left:
       - href: index.qmd
@@ -15,7 +15,9 @@ website:
         icon: body-text
     right:
       - icon: github
-        href: https://github.com/nokid0ki/nm2207wuhu
+        href: https://github.com/nokid0ki?tab=repositories
+      - icon: linkedin
+        href: https://www.linkedin.com/in/niki-hartono/
     
 format:
   html:

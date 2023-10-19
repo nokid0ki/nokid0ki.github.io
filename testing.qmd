@@ -1,13 +1,15 @@
 ---
 title: My weekly submissions
-subtitle: Or click on the GitHub icon on the right of the navigation to go to my page directly!
-date: today
 toc: true
 theme:
   - cosmo
   - test.scss
+favicon: "hehe.png"
   
 ---
+##### Or click on the GitHub icon on the right of the navigation bar to go to my page directly!
+
+<br>
 
 | Week  | Link
 |:------|-----|---------|:------:|

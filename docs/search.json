@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "\nWelcome to my webpage!!\n",
+    "title": "Hi there!",
     "section": "",
-    "text": "Welcome to my webpage!!\n\n\nHi everyone! I am Niki :)\nI enjoy drawing, travelling, and eating good food. I took up this mod to kick start coding!"
+    "text": "My name is Niki! I enjoy digital art, cooking, and exploring the outdoors. I joined this module to kick start coding.\nMy weekly R submissions can be found by clicking on the tab in navigation bar above.\nThank you for coming to my site!"
   },
   {
     "objectID": "about.html",
@@ -18,6 +18,27 @@
     "href": "testing.html",
     "title": "My weekly submissions",
     "section": "",
-    "text": "Week\nLink\n\n\n\n\n\n\n1\nWeek 1\n\n\n\n\n2\nWeek 2\n\n\n\n\n3\nWeek 3\n\n\n\n\n4\nWeek 4\n\n\n\n\n5\nWeek 5\n\n\n\n\n6\nWeek 6\n\n\n\n\n7\nWeek 7\n\n\n\n\n8\nWeek 8\n\n\n\n\n9\nWeek 9"
+    "text": "Or click on the GitHub icon on the right of the navigation bar to go to my page directly!\n\n\n\n\nWeek\nLink\n\n\n\n\n\n\n1\nWeek 1\n\n\n\n\n2\nWeek 2\n\n\n\n\n3\nWeek 3\n\n\n\n\n4\nWeek 4\n\n\n\n\n5\nWeek 5\n\n\n\n\n6\nWeek 6\n\n\n\n\n7\nWeek 7\n\n\n\n\n8\nWeek 8\n\n\n\n\n9\nWeek 9"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Hi there!",
+    "section": "Education",
+    "text": "Education\nUniversity of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul MA B.A in Economics | Sept 2007 - June 2011"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Hi there!",
+    "section": "Experience",
+    "text": "Experience\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Spet 2012 - April 2018"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Hi there!",
+    "section": "",
+    "text": "My name is Niki! I enjoy digital art, cooking, and exploring the outdoors. I joined this module to kick start coding.\nMy weekly R submissions can be found by clicking on the tab in navigation bar above.\nThank you for coming to my site!"
   }
 ]

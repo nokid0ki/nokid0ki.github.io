@@ -1,19 +1,23 @@
-<center>![](images/photo1691418026.jpeg){width="500"}</center>
-
-<center>
-
-<h1>Welcome to my webpage!!</h1>
-
-</center>
-
-Hi everyone! I am Niki :)
-
-I enjoy drawing, travelling, and eating good food. I took up this mod to kick start coding!
-
 ---
- sidebar:
-      tools:
-        - icon: globe
-          href: https://github.com/nokid0ki/nm2207wuhu
-          text: test
+title: "Hi there!"
+about:
+  template: trestles
+  image: "me3.png"
+  links:
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/niki-hartono/
+    - icon: github
+      text: Github
+      href: https://github.com/nokid0ki
 ---
+## About me
+
+My name is Niki! I enjoy digital art, cooking, and exploring the outdoors. I joined this module to kick start coding.
+
+My weekly R submissions can be found by clicking on the tab in navigation bar above.
+
+Thank you for coming to my site!
+
+
+
