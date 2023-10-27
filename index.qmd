@@ -11,13 +11,13 @@ about:
       text: Github
       href: https://github.com/nokid0ki
 ---
-## About me
 
+
+## About me
 My name is Niki! I enjoy digital art, cooking, and exploring the outdoors. I joined this module to kick start coding.
 
 My weekly R submissions can be found by clicking on the tab in navigation bar above.
 
 Thank you for coming to my site!
-
 
 
