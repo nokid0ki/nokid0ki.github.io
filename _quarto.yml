@@ -8,11 +8,14 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: About me
+        text: Home
         icon: house
       - href: testing.qmd
-        text: My weekly R submissions
+        text: Weekly R submissions
         icon: body-text
+      - href: project.qmd
+        text: Final project
+        icon: geo-alt-fill
     right:
       - icon: github
         href: https://github.com/nokid0ki?tab=repositories

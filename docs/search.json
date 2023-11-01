@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Hi there!",
     "section": "",
-    "text": "My name is Niki! I enjoy digital art, cooking, and exploring the outdoors. I joined this module to kick start coding.\nMy weekly R submissions can be found by clicking on the tab in navigation bar above.\nThank you for coming to my site!"
+    "text": "My name is Niki! I enjoy digital art, cooking, and exploring the outdoors.\nMy weekly R submissions and final project can be found by clicking on the tab in navigation bar above.\nThank you for coming to my site! :)"
   },
   {
     "objectID": "about.html",
@@ -39,7 +39,7 @@
     "href": "index.html#about-me",
     "title": "Hi there!",
     "section": "",
-    "text": "My name is Niki! I enjoy digital art, cooking, and exploring the outdoors. I joined this module to kick start coding.\nMy weekly R submissions can be found by clicking on the tab in navigation bar above.\nThank you for coming to my site!"
+    "text": "My name is Niki! I enjoy digital art, cooking, and exploring the outdoors.\nMy weekly R submissions and final project can be found by clicking on the tab in navigation bar above.\nThank you for coming to my site! :)"
   },
   {
     "objectID": "rsubmissions.html",
@@ -47,5 +47,33 @@
     "title": "My weekly submissions",
     "section": "",
     "text": "Or click on the GitHub icon on the right of the navigation bar to go to my page directly!\n\n\n\n\nWeek\nLink\n\n\n\n\n\n\n1\nWeek 1\n\n\n\n\n2\nWeek 2\n\n\n\n\n3\nWeek 3\n\n\n\n\n4\nWeek 4\n\n\n\n\n5\nWeek 5\n\n\n\n\n6\nWeek 6\n\n\n\n\n7\nWeek 7\n\n\n\n\n8\nWeek 8\n\n\n\n\n9\nWeek 9"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Looking to rent a HDB flat in Singapore?",
+    "section": "",
+    "text": "Let’s see what’s the average pricing of each type of flat per town, hover over the map below.\nCurrently a work in progress…"
+  },
+  {
+    "objectID": "project.html#quarto",
+    "href": "project.html#quarto",
+    "title": "project",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "project.html#running-code",
+    "href": "project.html#running-code",
+    "title": "project",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "project.html#this-sem-be-tuff",
+    "href": "project.html#this-sem-be-tuff",
+    "title": "My final project",
+    "section": "",
+    "text": "I am unable to can"
   }
 ]

@@ -1,0 +1,29 @@
+---
+title: Looking to rent a HDB flat in Singapore?
+execute: 
+  echo: false
+format: html
+editor: visual
+---
+
+##### Let's see what's the average pricing of each type of flat per town, hover over the map below.
+
+Currently a work in progress...
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(sf)
+library(mapview)
+library(rvest)
+library(httr)
+
+wardsdivsmc <- read_sf(here::here("WardsDivisionsSMCs.kml"))
+
+mapview(wardsdivsmc, zcol = "Name", legend = FALSE)
+
+```
+
+##### 
+
+```{}
+```
