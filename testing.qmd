@@ -12,7 +12,7 @@ favicon: "hehe.png"
 <br>
 
 | Week | Link                                                                                                                                |     |     |
-|:----------------|-----------------|---------------------|:----------------:|
+|:-----|-------------------------------------------------------------------------------------------------------------------------------------|-----|:---:|
 | 1    | [Week 1](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%201%20submissions){.btn .btn-outline-secondary .btn role="button"}   |     |     |
 | 2    | [Week 2](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%202%20submissions){.btn .btn-outline-secondary .btn role="button"}   |     |     |
 | 3    | [Week 3](https://github.com/nokid0ki/nm2207wuhu/tree/main/Week%203%20submissions){.btn .btn-outline-secondary .btn role="button"}   |     |     |
