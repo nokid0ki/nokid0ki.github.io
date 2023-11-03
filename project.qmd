@@ -27,3 +27,31 @@ mapview(wardsdivsmc, zcol = "Name", legend = FALSE)
 
 ```         
 ```
+
+```{r}
+library(httr)
+library(jsonlite)
+
+# Define the API URL and set the headers
+api_url <- "https://www.ura.gov.sg/uraDataService/invokeUraDS?service=PMI_Resi_Transaction&batch=1"
+headers <- c(
+  "AccessKey" = "5b405e8f-5ea0-4022-8220-fd6cf6f295d6",
+  "Token" = "Y5f5pK6G2qa2GafBtB4d2dU--fBze2TPuZ5-c8ec9YX-f7Dq6dn2eJyC9cU7dByhkv+qUb02g-5f-bd58T6QcnVWkCAfDe4U5y87"
+)
+
+# Send a GET request to the API
+response <- GET(url = api_url, add_headers(.headers = headers))
+
+# Check the HTTP status code
+http_status_code <- status_code(response)
+if (http_status_code == 200) {
+  # Parse and process the JSON response
+  response_content <- content(response, "text")
+  data <- fromJSON(response_content)
+  print(data)
+} else {
+  cat("Request failed with status code:", http_status_code, "\n")
+}
+
+
+```
