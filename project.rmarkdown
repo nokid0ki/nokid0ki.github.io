@@ -6,11 +6,9 @@ format: html
 editor: visual
 ---
 
-
 ##### Let's see what's the average pricing of each type of flat per town, hover over the map below.
 
 Currently a work in progress...
-
 
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -25,9 +23,7 @@ mapview(wardsdivsmc, zcol = "Name", legend = FALSE)
 
 ```
 
-
 ##### 
 
-```{}
+```         
 ```
-
