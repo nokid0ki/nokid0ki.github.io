@@ -18,7 +18,7 @@
     "href": "testing.html",
     "title": "My weekly submissions",
     "section": "",
-    "text": "Or click on the GitHub icon on the right of the navigation bar to go to my page directly!\n\n\n\n\nWeek\nLink\n\n\n\n\n\n\n1\nWeek 1\n\n\n\n\n2\nWeek 2\n\n\n\n\n3\nWeek 3\n\n\n\n\n4\nWeek 4\n\n\n\n\n5\nWeek 5\n\n\n\n\n6\nWeek 6\n\n\n\n\n7\nWeek 7\n\n\n\n\n8\nWeek 8\n\n\n\n\n9\nWeek 9\n\n\n\n\n10\nWeek 10"
+    "text": "Or click on the GitHub icon on the right of the navigation bar to go to my page directly!\n\n\n\n\nWeek\nLink\n\n\n\n\n\n\n1\nWeek 1\n\n\n\n\n2\nWeek 2\n\n\n\n\n3\nWeek 3\n\n\n\n\n4\nWeek 4\n\n\n\n\n5\nWeek 5\n\n\n\n\n6\nWeek 6\n\n\n\n\n7\nWeek 7\n\n\n\n\n8\nWeek 8\n\n\n\n\n9\nWeek 9\n\n\n\n\n10\nWeek 10\n\n\n\n\n11\nWeek 11"
   },
   {
     "objectID": "index.html#education",
@@ -53,7 +53,7 @@
     "href": "project.html",
     "title": "Looking to rent a HDB flat in Singapore?",
     "section": "",
-    "text": "Let’s see what’s the average pricing of each type of flat per town, hover over the map below.\nCurrently a work in progress…"
+    "text": "We will investigate the average rental prices of HDB flats and its trends. The scope of this analysis involves rental prices between 2021 to 2023, covering 3 to 5 room flats. The data set used is publicly available here! :)\n\nA heat map of mean rental prices in each planning area\nHover over the area to view the planning area, and click upon it to view the mean rental price!\n\n\n\n\n\n\n\nhi i am confused"
   },
   {
     "objectID": "project.html#quarto",
