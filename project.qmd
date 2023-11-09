@@ -58,24 +58,31 @@ room <- keke %>%
 
 ```
 
-### **Average prices against type of flat** 🛏
+### **Prices against type of flat** 🛏
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
-hchart(room, "bar", hcaes(x = flat_type, y = mean_monthly_rent1)) %>%
-  hc_title(text = "Average flat prices") %>%
-  hc_xAxis(title = list(text = "Planning Area")) %>%
-  hc_yAxis(title = list(text = "Monthly rental price")) %>%
-  hc_legend(align = "right", layout = "vertical") %>%
-  hc_chart(type = "bar", backgroundColor = "#ededff") %>%
-  hc_caption(
-    text = "Hover over the bar graphs to get the specific planning area's data",
-    useHTML = TRUE)
+plot_ly(keke, y = ~monthly_rent, color = ~flat_type, type = "box") %>% layout(
+    xaxis = list(title = "Flat Type"),
+    yaxis = list(title = "Monthly Rent"),
+    plot_bgcolor = "#ededff",   
+    paper_bgcolor = "#ededff",
+    annotations = list(
+      list(
+        x = 0.5,
+        y = 1.05, 
+        text = "Hover over the box plots for more details",
+        showarrow = FALSE,
+        xref = "paper",
+        yref = "paper"
+      )
+    )
+  )
 
 ```
 
 <br>
 
-Intuitively, 1-room flats would be the cheapest, and executive flats being the most expensive. However, the increment in price plateaus as the size of the HDB flat increases. As seen, the price increase between a 4-room and a 5-room flat is 4%, whereas the price increase between a 1-room and 2-room flat is 26%.
+Intuitively, the mean prices for 1-room flats would be the cheapest, and executive flats being the most expensive. However, the increment in price plateaus as the size of the HDB flat increases. As seen, the price increase between a 4-room and a 5-room flat is 4%, whereas the price increase between a 1-room and 2-room flat is 26%.
 
 If space is a concern, and you're deciding between a 4-room and a 5-room, it's more worthwhile to rent a 5-room flat.
 
@@ -186,12 +193,18 @@ trend$mean_monthly_rent <- round(trend$mean_monthly_rent, 2)
 ```
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
-hchart(totalcount, "bar", hcaes(x = flat_type, y = total_count)) %>%
+hchart(totalcount, "pie", hcaes(x = flat_type, y = total_count)) %>%
   hc_title(text = "Overall Total Count of Flat Types") %>%
-  hc_xAxis(title = list(text = "Flat Type")) %>%
-  hc_yAxis(title = list(text = "Total Count")) %>%
   hc_legend(align = "right", layout = "vertical") %>%
-  hc_chart(type = "bar", backgroundColor = "#ededff")
+  hc_chart(type = "bar", backgroundColor = "#ededff") %>%
+  hc_plotOptions(
+    pie = list(
+      dataLabels = list(
+        enabled = TRUE,
+        format = '<b>{point.name}</b>: {point.percentage:.2f}%'
+      )
+    )
+  )
 
 ```
 
