@@ -50,7 +50,36 @@ meep_sub <- meep_sf %>%
 
 merged_data <- merge(meep_sf, rental1, by.x = "Name", by.y = "Name")
 
+# Finding average price of each type of flat
+room <- keke %>%
+  select(flat_type,monthly_rent) %>%
+  group_by(flat_type) %>%
+  summarise(mean_monthly_rent1 = mean(monthly_rent))
+
 ```
+
+### **Average prices against type of flat** 🛏
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+hchart(room, "bar", hcaes(x = flat_type, y = mean_monthly_rent1)) %>%
+  hc_title(text = "Average flat prices") %>%
+  hc_xAxis(title = list(text = "Planning Area")) %>%
+  hc_yAxis(title = list(text = "Monthly rental price")) %>%
+  hc_legend(align = "right", layout = "vertical") %>%
+  hc_chart(type = "bar", backgroundColor = "#ededff") %>%
+  hc_caption(
+    text = "Hover over the bar graphs to get the specific planning area's data",
+    useHTML = TRUE)
+
+```
+
+<br>
+
+Intuitively, 1-room flats would be the cheapest, and executive flats being the most expensive. However, the increment in price plateaus as the size of the HDB flat increases. As seen, the price increase between a 4-room and a 5-room flat is 4%, whereas the price increase between a 1-room and 2-room flat is 26%.
+
+If space is a concern, and you're deciding between a 4-room and a 5-room, it's more worthwhile to rent a 5-room flat.
+
+<br>
 
 ### **A heat map of mean rental prices in each planning area**📍
 
@@ -76,7 +105,7 @@ heatmap_map
 
 <br> Data set for the polygon's coordinates can be found [here](https://beta.data.gov.sg/collections/2104/view)!
 
-#### **Distribution of different HDB types across planning areas** 📊
+### **Distribution of different HDB types across planning areas** 📊
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 kekesubset <- keke %>%
@@ -258,7 +287,7 @@ hchart(west, "bar", hcaes(x = town, y = total_count, group = flat_type)) %>%
 
 <br>
 
-#### **Trend in rental prices over the 3 years** 📈
+### **Trend in rental prices over the 3 years** 📈
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 line_chart <- hchart(trend, "line", hcaes(x = year, y = as.numeric(mean_monthly_rent), group = town)) %>%
