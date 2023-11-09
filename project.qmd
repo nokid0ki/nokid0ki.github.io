@@ -1,12 +1,12 @@
 ---
-title: Looking to rent a HDB flat in Singapore?
+title: Looking to rent a HDB flat in Singapore? 🏠
 execute: 
   echo: false
 format: html
 editor: visual
 ---
 
-We will investigate the average rental prices of HDB flats and its trends. The scope of this analysis involves rental prices between 2021 to 2023, covering 3 to 5 room flats. The data set used is publicly available [here](https://beta.data.gov.sg/collections/166/view)! :)
+We will investigate the average rental prices of HDB flats and its trends. The scope of this analysis involves rental prices between 2021 to 2023, covering 3 to 5 room flats. The data set used is publicly available [here](https://beta.data.gov.sg/collections/166/view)! 😆
 
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -50,8 +50,8 @@ merged_data <- merge(meep_sf, rental1, by.x = "Name", by.y = "Name")
 
 ```
 
-### A heat map of mean rental prices in each planning area
-Hover over the area to view the planning area, and click upon it to view the mean rental price!
+### A heat map of mean rental prices in each planning area📍
+Hover over the area to view the planning area, and click upon it to view the mean rental price! (Edit: WIP in calculating mean per HDB type)
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -70,11 +70,14 @@ heatmap_map <- mapview(merged_data, zcol = "mean_monthly_rent", label="Name", po
 heatmap_map
 
 ```
+### Distribution of different HDB types across planning areas 📊
+Placeholder text
 
-##### hi i am confused
+### Trend in rental prices over the 3 years 📈
+Placeholder text
 
-```         
-```
+
+
 
 ```{r}
 

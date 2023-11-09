@@ -51,9 +51,9 @@
   {
     "objectID": "project.html",
     "href": "project.html",
-    "title": "Looking to rent a HDB flat in Singapore?",
+    "title": "Looking to rent a HDB flat in Singapore? 🏠",
     "section": "",
-    "text": "We will investigate the average rental prices of HDB flats and its trends. The scope of this analysis involves rental prices between 2021 to 2023, covering 3 to 5 room flats. The data set used is publicly available here! :)\n\nA heat map of mean rental prices in each planning area\nHover over the area to view the planning area, and click upon it to view the mean rental price!\n\n\n\n\n\n\n\nhi i am confused"
+    "text": "We will investigate the average rental prices of HDB flats and its trends. The scope of this analysis involves rental prices between 2021 to 2023, covering 3 to 5 room flats. The data set used is publicly available here! 😆\n\nA heat map of mean rental prices in each planning area📍\nHover over the area to view the planning area, and click upon it to view the mean rental price! (Edit: WIP in calculating mean per HDB type)\n\n\n\n\n\n\n\n\nDistribution of different HDB types across planning areas 📊\nPlaceholder text\n\n\nTrend in rental prices over the 3 years 📈\nPlaceholder text"
   },
   {
     "objectID": "project.html#quarto",
