@@ -6,7 +6,7 @@ format: html
 editor: visual
 ---
 
-We will investigate the average rental prices of HDB flats and its trends. The scope of this analysis involves rental prices between 2021 to 2023, covering 3 to 5 room flats. The data set used is publicly available [here](https://beta.data.gov.sg/collections/166/view)! 😆
+We will investigate the average rental prices of HDB flats and its trends. The scope of this analysis involves rental prices between 2021 to 2023, covering 1 to 5 room flats. The data set used is publicly available [here](https://beta.data.gov.sg/collections/166/view)! 😆
 
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -16,6 +16,8 @@ library(rvest)
 library(httr)
 library(dplyr)
 library(leaflet)
+library(plotly)
+library(highcharter)
 ```
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE, results='hide'}
@@ -50,7 +52,8 @@ merged_data <- merge(meep_sf, rental1, by.x = "Name", by.y = "Name")
 
 ```
 
-### A heat map of mean rental prices in each planning area📍
+### **A heat map of mean rental prices in each planning area**📍
+
 Hover over the area to view the planning area, and click upon it to view the mean rental price! (Edit: WIP in calculating mean per HDB type)
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
@@ -70,24 +73,214 @@ heatmap_map <- mapview(merged_data, zcol = "mean_monthly_rent", label="Name", po
 heatmap_map
 
 ```
-### Distribution of different HDB types across planning areas 📊
-Placeholder text
 
-### Trend in rental prices over the 3 years 📈
-Placeholder text
+<br> Data set for the polygon's coordinates can be found [here](https://beta.data.gov.sg/collections/2104/view)!
 
+#### **Distribution of different HDB types across planning areas** 📊
 
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+kekesubset <- keke %>%
+  select(town,flat_type) %>%
+  group_by(town, flat_type) %>%
+  summarise(count=n())
 
+region_mapping <- c(
+  "ANG MO KIO" = "North-East",
+  "BEDOK" = "East",
+  "BISHAN" = "Central",
+  "BUKIT BATOK" = "West",
+  "BUKIT MERAH" = "West",
+  "BUKIT PANJANG" = "West",
+  "BUKIT TIMAH" = "Central",
+  "CENTRAL" = "Central",
+  "CHOA CHU KANG" = "West",
+  "CLEMENTI" = "West",
+  "GEYLANG" = "Central",
+  "HOUGANG" = "North-East",
+  "JURONG EAST" = "West",
+  "JURONG WEST" = "West",
+  "KALLANG/WHAMPOA" = "Central",
+  "MARINE PARADE" = "Central",
+  "PASIR RIS" = "East",
+  "PUNGGOL" = "North-East",
+  "QUEENSTOWN" = "Central",
+  "SEMBAWANG" = "North",
+  "SENGKANG" = "North-East",
+  "SERANGOON" = "North-East",
+  "TAMPINES" = "East",
+  "TOA PAYOH" = "Central",
+  "WOODLANDS" = "North",
+  "YISHUN" = "North")
 
-```{r}
+kekesubset$region <- region_mapping[kekesubset$town]
 
+#Segregating bar graphs into different regions
+north <- kekesubset %>%
+  filter(region=="North") %>%
+  group_by(town, flat_type) %>%
+  summarize(total_count = sum(count))
+
+northeast <- kekesubset %>%
+  filter(region=="North-East") %>%
+  group_by(town, flat_type) %>%
+  summarize(total_count = sum(count))
+
+east <- kekesubset %>%
+  filter(region=="East") %>%
+  group_by(town, flat_type) %>%
+  summarize(total_count = sum(count))
+
+west <- kekesubset %>%
+  filter(region=="West") %>%
+  group_by(town, flat_type) %>%
+  summarize(total_count = sum(count))
+
+central <- kekesubset %>%
+  filter(region=="Central") %>%
+  group_by(town, flat_type) %>%
+  summarize(total_count = sum(count))
+
+totalcount <- kekesubset %>%
+  group_by(flat_type) %>%
+  summarize(total_count=sum(count))
+
+#Adding year column
+keke <- keke %>%
+  mutate(year = substr(rent_approval_date, 1, 4)) 
+
+trend <- keke %>%
+  group_by(town,year) %>%
+  summarize(mean_monthly_rent = mean(monthly_rent))
+
+trend$mean_monthly_rent <- round(trend$mean_monthly_rent, 2)
 
 ```
 
-```{r message=FALSE, warning=FALSE}
-
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+hchart(totalcount, "bar", hcaes(x = flat_type, y = total_count)) %>%
+  hc_title(text = "Overall Total Count of Flat Types") %>%
+  hc_xAxis(title = list(text = "Flat Type")) %>%
+  hc_yAxis(title = list(text = "Total Count")) %>%
+  hc_legend(align = "right", layout = "vertical") %>%
+  hc_chart(type = "bar", backgroundColor = "#ededff")
 
 ```
+
+Generally, 4-room flats are the most abundant type of HDB rental. Below, we will be able to see the distribution of HDB rentals across regions and individual planning areas.
+
+###### **Central**
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+
+hchart(central, "bar", hcaes(x = town, y = total_count, group = flat_type)) %>%
+  hc_title(text = "Total Count of Flat Types in the Northeast Region") %>%
+  hc_xAxis(title = list(text = "Planning Area")) %>%
+  hc_yAxis(title = list(text = "Total Count")) %>%
+  hc_legend(align = "right", layout = "vertical") %>%
+  hc_chart(type = "bar", backgroundColor = "#ededff") %>%
+  hc_caption(
+    text = "Hover over the line graphs to get the specific planning area's data",
+    useHTML = TRUE)
+
+```
+
+<br>
+
+###### **East**
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+
+hchart(east, "bar", hcaes(x = town, y = total_count, group = flat_type)) %>%
+  hc_title(text = "Total Count of Flat Types in the East Region") %>%
+  hc_xAxis(title = list(text = "Planning Area")) %>%
+  hc_yAxis(title = list(text = "Total Count")) %>%
+  hc_legend(align = "right", layout = "vertical") %>%
+  hc_chart(type = "bar", backgroundColor = "#ededff") %>%
+  hc_caption(
+    text = "Hover over the line graphs to get the specific planning area's data",
+    useHTML = TRUE)
+
+```
+
+<br>
+
+###### **North**
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+
+hchart(north, "bar", hcaes(x = town, y = total_count, group = flat_type)) %>%
+  hc_title(text = "Total Count of Flat Types in the North Region") %>%
+  hc_xAxis(title = list(text = "Planning Area")) %>%
+  hc_yAxis(title = list(text = "Total Count")) %>%
+  hc_legend(align = "right", layout = "vertical") %>%
+  hc_chart(type = "bar", backgroundColor = "#ededff") %>%
+  hc_caption(
+    text = "Hover over the line graphs to get the specific planning area's data",
+    useHTML = TRUE)
+
+```
+
+<br>
+
+###### **North-East**
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+
+hchart(northeast, "bar", hcaes(x = town, y = total_count, group = flat_type)) %>%
+  hc_title(text = "Total Count of Flat Types in the Northeast Region") %>%
+  hc_xAxis(title = list(text = "Planning Area")) %>%
+  hc_yAxis(title = list(text = "Total Count")) %>%
+  hc_legend(align = "right", layout = "vertical") %>%
+  hc_chart(type = "bar", backgroundColor = "#ededff") %>%
+  hc_caption(
+    text = "Hover over the line graphs to get the specific planning area's data",
+    useHTML = TRUE)
+
+```
+
+<br>
+
+###### **West**
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+
+hchart(west, "bar", hcaes(x = town, y = total_count, group = flat_type)) %>%
+  hc_title(text = "Total Count of Flat Types in the West Region") %>%
+  hc_xAxis(title = list(text = "Planning Area")) %>%
+  hc_yAxis(title = list(text = "Total Count")) %>%
+  hc_legend(align = "right", layout = "vertical") %>%
+  hc_chart(type = "bar", backgroundColor = "#ededff") %>%
+  hc_caption(
+    text = "Hover over the line graphs to get the specific planning area's data",
+    useHTML = TRUE)
+
+```
+
+<br>
+
+#### **Trend in rental prices over the 3 years** 📈
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+line_chart <- hchart(trend, "line", hcaes(x = year, y = as.numeric(mean_monthly_rent), group = town)) %>%
+  hc_title(text = "Mean Monthly Rent Over Years") %>%
+  hc_xAxis(title = list(text = "Year")) %>%
+  hc_yAxis(title = list(text = "Mean Monthly Rent")) %>%
+  hc_legend(align = "right", layout = "vertical") %>%
+  hc_chart(type = "line", backgroundColor = "#ededff") %>%
+  hc_caption(
+    text = "Hover over the line graphs to get the specific planning area's data",
+    useHTML = TRUE)
+
+line_chart
+```
+
+<br>
+
+Despite the limitation of the data set having only 3 years of data, it is evident that there is a consistent increasing trend across all planning areas. Further, it is observed that the increase in rental prices are relatively unanimous as well.
+
+### Placeholder title for further analysis 🫧
+
+Placeholder text
 
 ```         
 ```
