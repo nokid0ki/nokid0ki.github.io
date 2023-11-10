@@ -6,7 +6,7 @@ format: html
 editor: visual
 ---
 
-We will investigate the average rental prices of HDB flats and its trends. The scope of this analysis involves rental prices between 2021 to 2023, covering 1 to 5 room flats. The data set used is publicly available [here](https://beta.data.gov.sg/collections/166/view)! 😆
+We will investigate the average rental prices of HDB flats and its trends. The scope of this analysis involves rental prices between 2021 to 2023, covering 1 to 5 room flats. The data set used is publicly available [here](https://beta.data.gov.sg/collections/166/view)! 😆 All the graphs here are interactive, feel free to hover of them to get the relevant data.
 
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -56,6 +56,31 @@ room <- keke %>%
   group_by(flat_type) %>%
   summarise(mean_monthly_rent1 = mean(monthly_rent))
 
+# Scatterplot analysis
+# Calculate percentages
+
+timetravel <- read_csv("timetravel.csv")
+
+timetravelarea <- timetravel %>%
+  left_join(rental1, by = c("Planning_Area" = "Name"))
+
+percent_timetravel <- timetravel
+percent_timetravel[, -1] <- percent_timetravel[, -1] / percent_timetravel$Total_Pop * 100
+
+# Round percentages to 1 decimal place
+percent_timetravel[, -1] <- round(percent_timetravel[, -1], 2)
+
+percent_timetravelarea <- percent_timetravel %>%
+  left_join(rental1, by = c("Planning_Area" = "Name"))
+
+data_long <- percent_timetravelarea %>% 
+  pivot_longer(
+    cols = c(Up_To_15_Mins, "16_to_30_Mins", "31_to_45_Mins", "46_to_60_Mins", More_Than_60_Mins),
+    names_to = "TimeToWork",
+    values_to = "Percentage"
+  )
+
+
 ```
 
 ### **Prices against type of flat** 🛏
@@ -90,7 +115,7 @@ If space is a concern, and you're deciding between a 4-room and a 5-room, it's m
 
 ### **A heat map of mean rental prices in each planning area**📍
 
-Hover over the area to view the planning area, and click upon it to view the mean rental price! (Edit: WIP in calculating mean per HDB type)
+Hover over the area to view the planning area, and click upon it to view the mean rental price! (Edit: WIP in calculating mean per HDB type + considering making this into a Shiny app)
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -113,6 +138,8 @@ heatmap_map
 <br> Data set for the polygon's coordinates can be found [here](https://beta.data.gov.sg/collections/2104/view)!
 
 ### **Distribution of different HDB types across planning areas** 📊
+
+Edit: Considering making this entire section into a Shiny app for better consolidation
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 kekesubset <- keke %>%
@@ -320,9 +347,25 @@ line_chart
 
 Despite the limitation of the data set having only 3 years of data, it is evident that there is a consistent increasing trend across all planning areas. Further, it is observed that the increase in rental prices are relatively unanimous as well.
 
-### Placeholder title for further analysis 🫧
+### Travelling time to work vs prices of rental? 🧑‍💼
 
-Placeholder text
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+plot_ly(data_long, x = ~mean_monthly_rent, y = ~Percentage, text = ~Planning_Area, color = ~TimeToWork, type = "scatter", mode = "markers") %>%
+  layout(
+    xaxis = list(title = "Mean Monthly Rent"),
+    yaxis = list(title = "% of who takes n minutes to travel to work"),
+    plot_bgcolor = "#ededff",
+    paper_bgcolor = "#ededff"
+  )
+
+
+
+
+```
+
+<br>
+
+Interestingly, there does not seem to be a direct correlation between how long it takes to get to work and the mean monthly rent. I guess everyone just needs a place to stay hahah. (Edit: may edit this scatter plot to make it easier to understand)
 
 ```         
 ```
